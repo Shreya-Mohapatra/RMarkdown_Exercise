@@ -1,0 +1,24 @@
+This is really more for the files in this project:
+
+RMarkdown_Exercise(290323) >
+
+1. RMarkdown_Practice.Rmd - the rmd file that is working well for knitting into html; uploaded to the repository on GitHub
+2. index.html - the html file generated from 1.
+3. RMarkdown_Practice-II.Rmd - modifications I made to 1. to make it better suited to be knit into PDF
+4. RMarkdown_Practice-II.pdf - PDF resulting from 3.
+
+RMarkdown_Exercise(290323) > where I wrangled >
+
+1. working_script.R - all the code chunks from the  RMarkdown_Practice.Rmd file.
+2. for_trials.R - where I tested different codes
+3. pdf knitting.Rmd - to test if my knit to PDF/ tinytex was working
+4. pdf-knitting.pdf - proof that it works
+
+RMarkdown_Exercise(290323) > figs >
+
+1. trial1.gif - random error
+2. DD.gif - i altered the tibble with code and this is the gif it generated (check for_trials.R to see code & tibble)
+3. simpleplot.png - version 1 (refer to RMarkdown_Practice.Rmd)
+4. simpleanimated.gif - version 1 (refer to RMarkdown_Practice.Rmd)
+5. notsosimpleplot.png - version 2 (refer to RMarkdown_Practice.Rmd)
+4. notsosimpleanimated.gif - version 2 (refer to RMarkdown_Practice.Rmd)

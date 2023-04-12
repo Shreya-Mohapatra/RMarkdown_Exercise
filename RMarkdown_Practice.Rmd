@@ -123,7 +123,7 @@ simple <- datasaurus_dozen %>%
 simple
 
 # to save the image generated; you can change the image type to .jpeg or .TIFF etc; change "figs" to your folder of choice within the working directory
-ggsave(here("figs", "tester.png")) 
+ggsave(here("figs", "simpleplot.png")) 
 
 ```
 
@@ -172,7 +172,7 @@ notsosimple <- datasaurus_dozen %>%
   theme_set(theme_bw())
 
 # to save this image; change "figs" to your folder of choice within the working directory
-ggsave(here("figs", "tester2.png"))
+ggsave(here("figs", "notsosimpleplot.png"))
 
 # to view the plot we have generated
 notsosimple
