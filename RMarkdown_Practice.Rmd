@@ -1,7 +1,7 @@
 ---
-title: "RMarkdown Exercise : Datasaurus Dozen"
+title: "RMarkdown Exercise: Datasaurus Dozen"
 author: "Shreya Mohapatra"
-date: "2023-03-29"
+date: "first published: 2023-03-29; last updated: 2023-04-12"
 output:
   html_document:
     toc: yes
@@ -17,7 +17,7 @@ header-includes:
 
 ### I dino what to tell ya, but here() it goes anyway
 
-The [Datasaurus Dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs), a misnomer, contains 13 datasets: Alberto Cairo's Datasaurus or as he prefers [Anscombosaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html), and 12 others created by [Justin Matejka & George Fitzmaurice](https://damassets.autodesk.net/content/dam/autodesk/www/autodesk-reasearch/Publications/pdf/same-stats-different-graphs.pdf). Each dataset has the same summary statistics (mean, sd, and Pearson'r r) but results in very different visualizations. Similar in principle to Anscombe's Quartet, ***the purpose of this dataset is to highlight the importance of graphical representation.***
+The [Datasaurus Dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs), a misnomer, contains 13 datasets: Alberto Cairo's Datasaurus or as he prefers [Anscombosaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html), and 12 others created by [Justin Matejka & George Fitzmaurice](https://damassets.autodesk.net/content/dam/autodesk/www/autodesk-reasearch/Publications/pdf/same-stats-different-graphs.pdf). Each dataset has the same summary statistics (mean, sd, and Pearson's r) but results in very different visualizations. Similar in principle to Anscombe's Quartet, ***the purpose of this dataset is to highlight the importance of graphical representation.***
 
 Here's a very fun tool created by [Robert Grant](http://robertgrantstats.co.uk/) to [create your own dataset](http://robertgrantstats.co.uk/drawmydata.html) based on what you want the scatterplot to look like! A great way to understand both stats and visualization.
 
@@ -67,7 +67,7 @@ devtools::install_github('yihui/knitr')
 ### Let's take a look at the DATAFRAME
 
 The first column is "dataset". This groups the rows into the 13 datasets. This will be helpful when we write the code for plotting and animating because the code can then iterate through these groups.
-The second and third columns are "x" for x co-ordinates and "y" for y co-ordinates.
+The second and third columns are "x" for x coordinates and "y" for y coordinates.
 
 ```{r View the df}
 # shows the first six rows of the df
@@ -183,7 +183,7 @@ notsosimple
 
 We see a single plot with ALL the data points from ALL the datasets overlapping each other. Why? Let's see what happens when we animate this next!
 
-```{r GGANIMATE v2, fig.cap= "The DD animation #2 (coolest, in my humble opninion)"}
+```{r GGANIMATE v2, fig.cap= "The DD animation #2 (coolest, in my humble opinion)"}
 
 # creating animation
 scatter_viz2 <- notsosimple +
@@ -207,23 +207,23 @@ scatter_viz2
 
 Et, voila! The classic animation that you might have seen across the internet where it cycles through the different plots on the same graph.
 
-You can now also appreciate the difference between creating facets in a graph ( as [VERSION ONE](#version-one) ) for the different datasets vs overlaying the datasets ( as in [VERSION TWO](#version-two) ) in the graph.
+You can now also appreciate the difference between creating facets in a graph ( as in [VERSION ONE](#version-one) ) for the different datasets vs overlaying the datasets ( as in [VERSION TWO](#version-two) ) in the graph.
 
 ### CONCLUSION
 
 The kind of visualization you choose for your data will depend on what your goal is:
 
-- what is the question you are trying to answer or message you are trying to convey
-- what kind of data do you have
-- how can the data be presented clearly and is more or less self-explanatory
-- can it be engaging without losing accuracy or important information
+- what is the question you are trying to answer or message you are trying to convey?
+- what kind of data do you have?
+- how can the data be presented clearly and is more or less self-explanatory?
+- can it be engaging without losing accuracy or important information?
 
 Well, hope that was fun and educational.
 `That's all for now.`
 
 ### REFERENCES
 
-- [Acknowledging Tom](https://tomstafford.github.io/psy6422/rmarkdown.html)
+- [Acknowledging Dr. Stafford](https://tomstafford.github.io/psy6422/rmarkdown.html)
 - [Animation code](https://rpubs.com/tylerotto/DinosaurusDozen)
 - [gganimate cheat code](https://ugoproto.github.io/ugo_r_doc/pdf/gganimate.pdf)
 - [RMarkdown styling](https://bookdown.org/yihui/rmarkdown/html-document.html)
