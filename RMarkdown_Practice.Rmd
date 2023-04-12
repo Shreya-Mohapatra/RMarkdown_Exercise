@@ -1,5 +1,5 @@
 ---
-title: "RMarkdown Exercise"
+title: "RMarkdown Exercise : Datasaurus Dozen"
 author: "Shreya Mohapatra"
 date: "2023-03-29"
 output:
@@ -17,7 +17,7 @@ header-includes:
 
 ### I dino what to tell ya, but here() it goes anyway
 
-The [Datasaurus Dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs), a misnomer, contains 13 datasets: Alberto Cairo's Datasaurus or as he prefers [Anscombosaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html), and 12 others created by [Justin Matejka & George Fitzmaurice](https://damassets.autodesk.net/content/dam/autodesk/www/autodesk-reasearch/Publications/pdf/same-stats-different-graphs.pdf). Each dataset has the same summary statistics (mean, sd, and Pearson'r r) but results in very different visualizations. Similar in principle to Anscombe's Quartet, *the purpose of this dataset is to highlight the importance of graphical representation.*
+The [Datasaurus Dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs), a misnomer, contains 13 datasets: Alberto Cairo's Datasaurus or as he prefers [Anscombosaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html), and 12 others created by [Justin Matejka & George Fitzmaurice](https://damassets.autodesk.net/content/dam/autodesk/www/autodesk-reasearch/Publications/pdf/same-stats-different-graphs.pdf). Each dataset has the same summary statistics (mean, sd, and Pearson'r r) but results in very different visualizations. Similar in principle to Anscombe's Quartet, ***the purpose of this dataset is to highlight the importance of graphical representation.***
 
 Here's a very fun tool created by [Robert Grant](http://robertgrantstats.co.uk/) to [create your own dataset](http://robertgrantstats.co.uk/drawmydata.html) based on what you want the scatterplot to look like! A great way to understand both stats and visualization.
 
@@ -32,12 +32,12 @@ There's a couple of options:
 
 To load that data in as a package:
 
-+ you can either use the latest stable version available on CRAN
++ you can either use the **latest stable version available on CRAN**
 ```{r Install datasauRus package through CRAN, eval=FALSE}
 install.packages("datasauRus")
 ```
 
-+ or you can get the latest dev version from GitHub
++ or you can get the **latest dev version from GitHub**
 ```{r Install datasauRus package from GitHub, message=FALSE, warning=FALSE}
 
 devtools::install_github("jumpingrivers/datasauRus")
@@ -45,6 +45,8 @@ devtools::install_github("jumpingrivers/datasauRus")
 ```
 
 ### Next, let's get some LIBRARIES loaded in
+
+You may need to install one or more of these packages first by using `install.package()`
 
 ```{r Libraries, error=FALSE, message=FALSE, warning=FALSE}
 
@@ -75,7 +77,7 @@ tail(datasaurus_dozen, 6)
 
 ```
 
-Now, if we look at their *descriptive statistics*, these datasets will appear similar.
+Now, if we look at their **descriptive statistics**, these datasets will *appear similar*.
 
 ```{r}
 
@@ -98,11 +100,13 @@ It is easy to assume at this stage that these datasets would look exactly the sa
 
 ### TIME FOR THE FUN GRAPHS!
 
-We will create two versions to illustrate that _even small changes can make big difference in how data can be presented_.
+> We will create two versions to illustrate that *even small changes can make big difference in how data can be presented.*
 
 #### VERSION ONE
 
-```{r GGPLOT v1, fig.cap= "The DD #1", fig.height=8}
+First, we need to create a ggplot that we will then use for our animation. The way your animation runs will depend on this ggplot you create. This will become evident when you look at [VERSION TWO](#version-two) below.
+
+```{r GGPLOT v1, fig.cap="The DD ggplot #1", fig.height=8, message=FALSE, warning=FALSE}
 # here were will generate a single image with a separate plot for each of the 13 datasets
 simple <- datasaurus_dozen %>%
   # mapping the variables
@@ -123,9 +127,9 @@ ggsave(here("figs", "tester.png"))
 
 ```
 
-Now, this is a static image. It might be more fun to look at an animated version.
+Now, this is a static image. It might be more fun to look at an ***animated version.***
 
-```{r GGANIMATE v1, fig.cap= "The DD #2"}
+```{r GGANIMATE v1, fig.cap= "The DD animation #1"}
 
 # this will add the animation to cycle through the plots
 scatter_viz <- simple +
@@ -154,7 +158,9 @@ Satisfying! But can we refine it more?
 
 #### VERSION TWO
 
-```{r GGPLOT v2, fig.cap= "The DD #3"}
+We will create a new ggplot.
+
+```{r GGPLOT v2, fig.cap= "The DD ggplot #2", message=FALSE, warning=FALSE}
 
 # shorter code.. hmm.
 notsosimple <- datasaurus_dozen %>% 
@@ -169,14 +175,15 @@ notsosimple <- datasaurus_dozen %>%
 ggsave(here("figs", "tester2.png"))
 
 # to view the plot we have generated
-# what do you see?
 notsosimple
 
-# a single plot with ALL the data points from ALL the datasets overlapping each other. Why? Let's see what happens when we animate this next!
+# what do you see?
 
 ```
 
-```{r GGANIMATE v2, fig.cap= "The DD but coolest, in my humble opninion"}
+We see a single plot with ALL the data points from ALL the datasets overlapping each other. Why? Let's see what happens when we animate this next!
+
+```{r GGANIMATE v2, fig.cap= "The DD animation #2 (coolest, in my humble opninion)"}
 
 # creating animation
 scatter_viz2 <- notsosimple +
@@ -200,6 +207,8 @@ scatter_viz2
 
 Et, voila! The classic animation that you might have seen across the internet where it cycles through the different plots on the same graph.
 
+You can now also appreciate the difference between creating facets in a graph ( as [VERSION ONE](#version-one) ) for the different datasets vs overlaying the datasets ( as in [VERSION TWO](#version-two) ) in the graph.
+
 ### CONCLUSION
 
 The kind of visualization you choose for your data will depend on what your goal is:
@@ -218,4 +227,6 @@ Well, hope that was fun and educational.
 - [Animation code](https://rpubs.com/tylerotto/DinosaurusDozen)
 - [gganimate cheat code](https://ugoproto.github.io/ugo_r_doc/pdf/gganimate.pdf)
 - [RMarkdown styling](https://bookdown.org/yihui/rmarkdown/html-document.html)
+- [RMarkdown basic syntax](https://www.markdownguide.org/basic-syntax/)
+- [Advanced syntax](https://www.markdownguide.org/extended-syntax/)
 - [knitr](https://yihui.org/knitr/options/)
