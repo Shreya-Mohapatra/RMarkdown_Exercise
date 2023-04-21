@@ -21,6 +21,14 @@ library(gifski)
 
 datasaurus_dozen
 
+# CODE CHUNK FOR RMD - didn't work
+# ```{r Knitr Dev Version, message=FALSE, warning=FALSE, include=FALSE}
+
+# we need the dev version of knitr to be able to knit gif into a pdf
+# devtools::install_github('yihui/knitr')
+
+# ```
+
 # --------------- NON-UNIFIED VERSION ------------
 
 # creating plot
