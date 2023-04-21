@@ -1,2 +1,7 @@
 # RMarkdown_Exercise
-Learning to use RMarkdown, knitting to html &amp; PDF (CNHN > DAAV > 29032023) + learning to use git &amp; github and publishing a webpage (CNHN > DAAV >30032023)
+(CNHN > DAAV > 29032023)
+- Learning to use RMarkdown
+- knitting to html & PDF 
+(CNHN > DAAV >30032023)
+- learning to use git & github
+- publishing a webpage 
